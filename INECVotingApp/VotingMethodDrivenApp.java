@@ -53,7 +53,7 @@ public class VotingMethodDrivenApp {
             String pincode = scanner.nextLine();
             System.out.print("Enter candidate's age: ");
             int age = scanner.nextInt();
-            scanner.nextLine(); // Clear the buffer
+            scanner.nextLine();
 
             try {
                 inec.addCandidates(firstName, lastName, pincode, age);
@@ -72,7 +72,7 @@ public class VotingMethodDrivenApp {
             String lastName = scanner.nextLine();
             System.out.print("Enter voter's age: ");
             int age = scanner.nextInt();
-            scanner.nextLine(); // Clear the buffer
+            scanner.nextLine();
 
             try {
                 inec.addVoters(firstName, lastName, "", age);
