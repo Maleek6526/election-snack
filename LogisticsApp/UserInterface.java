@@ -22,7 +22,8 @@ public class UserInterface {
         System.out.println(menu);
 
         int usersChoice = scanner.nextInt();
-        scanner.nextLine(); // Clear the buffer
+        scanner.nextLine();
+
 
         switch (usersChoice) {
             case 1 -> createShipments();
