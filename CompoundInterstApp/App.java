@@ -1,11 +1,19 @@
 package CompoundInterstApp;
 
 public class App {
-    public static double calculateCompoundInterest(double principal, double rate, double time, int frequency) {
-        if (time == 0) {
-            return principal;
+    public double calculateCompoundInterest(double initialInvestment, double monthlyContribution,
+                                            double annualInterestRate, int years, int compoundFrequency) {
+        double totalAmount = initialInvestment;
+        int totalPeriods = years * compoundFrequency;
+        double periodicRate = annualInterestRate / compoundFrequency;
+
+        for (int i = 0; i < totalPeriods; i++) {
+            if (i % (compoundFrequency / 12) == 0) {
+                totalAmount += monthlyContribution;
+            }
+            totalAmount *= (1 + periodicRate);
         }
-        rate = rate / 100;
-        return principal * Math.pow(1 + (rate / frequency), frequency * time);
+
+        return totalAmount;
     }
 }
