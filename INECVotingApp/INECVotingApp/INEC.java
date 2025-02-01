@@ -3,15 +3,15 @@ package INECVotingApp;
 import java.util.ArrayList;
 
 public class INEC {
-    private ArrayList<Voters> voters = new ArrayList<>();
-    private ArrayList<Candidates> candidates = new ArrayList<>();
+    private ArrayList<INECVotingApp.Voters> voters = new ArrayList<>();
+    private ArrayList<INECVotingApp.Candidates> candidates = new ArrayList<>();
     private int candidateCounter = 0;
     private int votersCounter = 0;
 
     public void addCandidates(String firstName, String lastName, String pincode, int candidateAge) {
         String fullName = firstName + " " + lastName;
         int candidateId = ++candidateCounter;
-        Candidates newCandidate = new Candidates(fullName, candidateId, candidateAge, pincode, 0);
+        INECVotingApp.Candidates newCandidate = new INECVotingApp.Candidates(fullName, candidateId, candidateAge, pincode, 0);
         candidates.add(newCandidate);
     }
 
